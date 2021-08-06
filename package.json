@@ -1,10 +1,45 @@
 {
+  "lint-staged": {
+    "*.{js,json,html,md}": [
+      "prettier --write"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  },
   "scripts": {
     "start": "parcel serve public/index.html --open",
-    "build": "parcel build public/index.html"
+    "build": "parcel build public/index.html",
+    "eslint": "eslint --cache './**/*.{ts,tsx}'",
+    "prettier": "prettier './**/*.{md,js,ts,tsx,json}'",
+    "lint": "run-p -l -c --aggregate-output lint:*",
+    "lint:tsc": "tsc",
+    "lint:eslint": "yarn eslint",
+    "lint:prettier": "yarn prettier --check",
+    "format": "run-s format:*",
+    "format:eslint": "yarn eslint --fix",
+    "format:prettier": "yarn prettier --write"
   },
   "devDependencies": {
+    "@types/node": "16.4.13",
+    "@types/react": "17.0.16",
+    "@types/react-dom": "17.0.9",
+    "@typescript-eslint/eslint-plugin": "4.29.0",
+    "@typescript-eslint/parser": "4.29.0",
+    "babel-eslint": "10.1.0",
+    "eslint": "7.32.0",
+    "eslint-config-react-app": "6.0.0",
+    "eslint-plugin-flowtype": "5.9.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jsx-a11y": "6.4.1",
+    "eslint-plugin-react": "7.24.0",
+    "eslint-plugin-react-hooks": "4.2.0",
+    "husky": "7.0.1",
+    "lint-staged": "11.1.2",
+    "npm-run-all": "4.1.5",
     "parcel": "2.0.0-rc.0",
+    "prettier": "2.3.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typescript": "4.3.5"
