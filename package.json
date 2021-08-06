@@ -19,7 +19,8 @@
     "lint:prettier": "yarn prettier --check",
     "format": "run-s format:*",
     "format:eslint": "yarn eslint --fix",
-    "format:prettier": "yarn prettier --write"
+    "format:prettier": "yarn prettier --write",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@types/node": "16.4.13",
