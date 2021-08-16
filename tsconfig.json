@@ -14,8 +14,8 @@
     "jsx": "preserve",
     "noEmit": true,
     "paths": {
-      "~/src*": ["./src/*"]
+      "~/src/*": ["./src/*"]
     }
   },
-  "include": ["src", "typings"]
+  "include": ["src", "typings", ".storybook"]
 }
