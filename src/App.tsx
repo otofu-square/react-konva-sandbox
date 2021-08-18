@@ -1,9 +1,9 @@
 import { Box, chakra } from "@chakra-ui/react";
 import { FC } from "react";
-import { Layer, Stage, Text } from "react-konva";
-import { useMeasure } from "react-use";
+import { Layer, Text } from "react-konva";
 
 import { ColorRect } from "./ColorRect";
+import { StageProvider } from "./components/utils/StageContext";
 
 export const ChakraRootWWrapperBox = chakra(Box, {
   baseStyle: {
@@ -12,17 +12,11 @@ export const ChakraRootWWrapperBox = chakra(Box, {
   },
 });
 
-export const App: FC = () => {
-  const [ref, { width, height }] = useMeasure<HTMLDivElement>();
-
-  return (
-    <ChakraRootWWrapperBox ref={ref}>
-      <Stage width={width} height={height}>
-        <Layer>
-          <Text text="hello world" />
-          <ColorRect />
-        </Layer>
-      </Stage>
-    </ChakraRootWWrapperBox>
-  );
-};
+export const App: FC = () => (
+  <StageProvider>
+    <Layer>
+      <Text draggable text="hello world" />
+      <ColorRect />
+    </Layer>
+  </StageProvider>
+);

@@ -11,8 +11,9 @@
     "rootDir": ".",
     "baseUrl": ".",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "noEmit": true,
+    "types": ["react/next", "react-dom/next"],
     "paths": {
       "~/src/*": ["./src/*"]
     }

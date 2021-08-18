@@ -11,6 +11,7 @@ export const ColorRect: FC = () => {
 
   return (
     <Rect
+      draggable
       x={20}
       y={20}
       width={50}

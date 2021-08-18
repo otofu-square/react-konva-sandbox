@@ -5,11 +5,13 @@ import ReactDOM from "react-dom";
 import { App } from "~/src/App";
 import { theme } from "~/src/styles";
 
-ReactDOM.render(
+const element = document.getElementById("root");
+if (!element) throw new Error("root element is not found.");
+
+ReactDOM.createRoot(element).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <App />
     </ChakraProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
