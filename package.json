@@ -33,7 +33,7 @@
     "react": "18.0.0-alpha-bc4e75112-20210815",
     "react-dom": "18.0.0-alpha-bc4e75112-20210815",
     "react-konva": "17.0.2-5",
-    "react-use": "17.2.4"
+    "react-use": "17.5.1"
   },
   "devDependencies": {
     "@babel/core": "7.15.0",
